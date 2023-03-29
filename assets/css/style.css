@@ -1,0 +1,246 @@
+/* 
+Flexbox
+Media Queries
+CSS Variables
+ */
+
+ :root{
+    --main-color: rgb(48, 38, 38);
+    --main-color-light: #f55;
+    --main-color-dark: rgb(2, 0, 0);
+    --main-text-color: #fff;
+    --hover-color: #b0a5a5d3;
+    --border-color:#808080;
+ }
+
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--main-color-dark);
+    color: var(--main-text-color);
+    font-family: 'Courier New', Courier, monospace;
+ }
+header{
+    background-color: var(--main-color);
+    display: flex;
+    border-bottom: 0.1rem solid var(--border-color);
+}
+header > *{
+    width: 100%;
+}
+.main-nav{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+}
+.logo{
+    color: var(--main-text-color);
+    font-size: 3rem;
+    box-shadow: 0 4px 8px 0 rgba(111, 219, 71, 0.529);
+}
+ul{
+    display: flex;
+    justify-content:flex-end;
+    list-style: none;
+    gap: 1rem;
+}
+
+.main-nav-link{
+    text-decoration: none;
+    color: var(--main-text-color);
+    font-size: 1.3rem;
+}
+a:hover{
+    border-bottom: 0.19rem solid var(--hover-color);
+}
+.photo-box{
+    background: linear-gradient(to right,#7fd567,#2a2a64);
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.1rem;
+    border-bottom: 0.1rem solid var(--border-color);
+}
+.photo{
+    margin: 0.3rem;
+    border: 0.1rem solid var(--border-color);
+}
+main{
+    display: flex;
+    flex-direction: column;
+}
+.about{
+    display: flex;
+    padding: 2rem;
+}
+.about-h2{
+    align-items: flex-end;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-right:0.15rem solid var(--border-color);
+    box-shadow: 0 4px 8px 0 rgba(111, 219, 71, 0.529);
+    text-align: right;
+    height: 100%;
+}
+.work {
+    box-shadow: 0 4px 8px 0 rgba(111, 219, 71, 0.529);
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: right;
+}
+.about-p{
+    font-size: 1.1rem;
+    padding: 1.5rem;
+}
+.chov{
+    border: 0.3rem solid var(--border-color);
+}
+.chov:hover{
+    filter: blur(8px);
+}
+.main-container {
+    display: flex;
+}
+
+.left-side {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-left: 20px;
+    padding: 20px;
+    border-right: 0.15rem solid var(--border-color);
+}
+
+.left-side h2 {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    gap: 20px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.main {
+    width: 100%;
+}
+
+.card-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.card-columns .card {
+    flex: 1;
+    min-width: calc(50% - 20px);
+    max-width: calc(50% - 20px);
+}
+.label-main{
+    font-size: 1.5rem;
+}
+.label{
+    font-size: 1.1rem;
+}
+footer{
+    background-color: var(--main-color-dark);
+    display: flex;
+    justify-content: space-between;
+    border-top: 0.1rem solid var(--border-color);
+}
+.foot-nav{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding: 1.2rem;
+}
+.contact{
+    color: var(--main-text-color);
+    font-size: 1.5rem;
+    box-shadow: 0 4px 8px 0 rgba(111, 219, 71, 0.529);
+    border-right:0.1rem solid var(--border-color);
+    padding-right: 20px;
+}
+.ul-foot{
+    padding: 20px;
+}
+.foot-link{
+    text-decoration: none;
+    color: var(--main-text-color);
+    font-size: 1rem;
+    text-align: right;
+}
+@media (max-width: 762px) {
+    header > *{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .main-nav{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .main-container {
+        flex-direction: column;
+    }
+
+    .left-side {
+        justify-content: center;
+    }
+
+    .card-columns .card {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    footer {
+        display:flex;
+        background-color: var();
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100;
+        
+    }
+    .foot-nav{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    ul{
+        flex-direction: column;
+        margin:10px 0;
+    }
+    .contact{
+        border-right: none;
+        box-shadow: none;
+    }
+    .photo-box{
+        flex-direction: column;
+        align-items: center;
+    }
+    .about{
+        flex-direction: column;
+        align-items: center;
+    }
+    .work{
+        text-align: center;
+    }
+}
+
+
+
